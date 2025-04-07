@@ -17,4 +17,6 @@ glm::vec3 z(0, 0, 1);
  */
 glm::vec3 get_midpoint(const glm::vec3 &a, const glm::vec3 &b) { return (a + b) * 0.5f; }
 
+glm::vec3 linearly_interpolate(const glm::vec3 &a, const glm::vec3 &b, float t) { return (1 - t) * a + t * b; }
+
 } // namespace glm_utils
