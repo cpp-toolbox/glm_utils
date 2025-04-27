@@ -9,7 +9,9 @@ extern glm::mat4 identity_matrix;
 extern glm::mat4 zero_matrix;
 
 extern glm::vec3 zero_R3;
+extern glm::vec3 one_R3;
 extern glm::vec2 zero_R2;
+extern glm::vec2 one_R2;
 extern glm::vec3 one;
 extern glm::vec3 x;
 extern glm::vec3 y;

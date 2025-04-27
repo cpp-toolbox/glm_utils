@@ -12,8 +12,9 @@ glm::mat4 identity_matrix(1.0f);
 glm::mat4 zero_matrix(0.0f);
 
 glm::vec3 zero_R3(0, 0, 0);
+glm::vec3 one_R3(1, 1, 1);
 glm::vec2 zero_R2(0, 0);
-glm::vec3 one(1, 1, 1);
+glm::vec2 oen_R2(1, 1);
 glm::vec3 x(1, 0, 0);
 glm::vec3 y(0, 1, 0);
 glm::vec3 z(0, 0, 1);
