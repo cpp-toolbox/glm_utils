@@ -2,6 +2,9 @@
 #define GLM_UTILS_HPP
 
 #include <glm/glm.hpp>
+#include <string>
+
+#include "sbpt_generated_includes.hpp"
 
 namespace glm_utils {
 
@@ -16,6 +19,8 @@ extern glm::vec3 one;
 extern glm::vec3 x;
 extern glm::vec3 y;
 extern glm::vec3 z;
+
+glm::vec3 parse_vec3(const std::string &s);
 
 glm::vec3 get_midpoint(const glm::vec3 &a, const glm::vec3 &b);
 glm::vec3 linearly_interpolate(const glm::vec3 &a, const glm::vec3 &b, float t);

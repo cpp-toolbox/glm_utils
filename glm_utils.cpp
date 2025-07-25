@@ -5,6 +5,7 @@
 #include <glm/gtx/vector_angle.hpp>
 #include <iostream>
 #include <ostream>
+#include <regex>
 
 namespace glm_utils {
 
@@ -18,6 +19,20 @@ glm::vec2 oen_R2(1, 1);
 glm::vec3 x(1, 0, 0);
 glm::vec3 y(0, 1, 0);
 glm::vec3 z(0, 0, 1);
+
+glm::vec3 parse_vec3(const std::string &s) {
+    static const std::regex vec3_pattern(regex_utils::captured_float_triplet);
+
+    std::smatch match;
+    if (std::regex_match(s, match, vec3_pattern)) {
+        float x = std::stof(match[1].str());
+        float y = std::stof(match[2].str());
+        float z = std::stof(match[3].str());
+        return glm::vec3(x, y, z);
+    } else {
+        throw std::invalid_argument("Invalid vec3 format: " + s);
+    }
+}
 
 /*
  * the direction vector between a and b is b - a, then we want to go halway across this so (b - a) * 0.5
