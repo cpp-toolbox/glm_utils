@@ -21,6 +21,7 @@ extern glm::vec3 y;
 extern glm::vec3 z;
 
 glm::vec3 parse_vec3(const std::string &s);
+glm::vec2 parse_vec2(const std::string &s);
 
 glm::vec3 get_midpoint(const glm::vec3 &a, const glm::vec3 &b);
 glm::vec3 linearly_interpolate(const glm::vec3 &a, const glm::vec3 &b, float t);

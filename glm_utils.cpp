@@ -20,6 +20,19 @@ glm::vec3 x(1, 0, 0);
 glm::vec3 y(0, 1, 0);
 glm::vec3 z(0, 0, 1);
 
+glm::vec2 parse_vec2(const std::string &s) {
+    static const std::regex vec3_pattern(regex_utils::captured_float_tuple);
+
+    std::smatch match;
+    if (std::regex_match(s, match, vec3_pattern)) {
+        float x = std::stof(match[1].str());
+        float y = std::stof(match[2].str());
+        return glm::vec2(x, y);
+    } else {
+        throw std::invalid_argument("Invalid vec2 format: " + s);
+    }
+}
+
 glm::vec3 parse_vec3(const std::string &s) {
     static const std::regex vec3_pattern(regex_utils::captured_float_triplet);
 
