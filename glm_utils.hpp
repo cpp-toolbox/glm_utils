@@ -1,6 +1,7 @@
 #ifndef GLM_UTILS_HPP
 #define GLM_UTILS_HPP
 
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
 #include <string>
 
