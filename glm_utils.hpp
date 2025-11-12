@@ -20,15 +20,14 @@ extern glm::vec3 zero_R3;
 
 /// @brief Unit vector with all components equal to 1 in R³.
 extern glm::vec3 one_R3;
+extern glm::vec3 minus_one_R3;
 
 /// @brief Zero vector in R² (2D space).
 extern glm::vec2 zero_R2;
 
 /// @brief Unit vector with all components equal to 1 in R².
 extern glm::vec2 one_R2;
-
-/// @brief Vector (1, 1, 1) in 3D space.
-extern glm::vec3 one;
+extern glm::vec2 minus_one_R2;
 
 /// @brief Unit vector along the X-axis (1, 0, 0).
 extern glm::vec3 x;
@@ -38,6 +37,21 @@ extern glm::vec3 y;
 
 /// @brief Unit vector along the Z-axis (0, 0, 1).
 extern glm::vec3 z;
+
+template <typename T1, typename T2> glm::vec2 tuple_to_vec2(const std::tuple<T1, T2> &t) {
+    return glm::vec2{static_cast<float>(std::get<0>(t)), static_cast<float>(std::get<1>(t))};
+}
+
+template <typename T1, typename T2, typename T3> glm::vec3 tuple_to_vec3(const std::tuple<T1, T2, T3> &t) {
+    return glm::vec3{static_cast<float>(std::get<0>(t)), static_cast<float>(std::get<1>(t)),
+                     static_cast<float>(std::get<2>(t))};
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+glm::vec4 tuple_to_vec4(const std::tuple<T1, T2, T3, T4> &t) {
+    return glm::vec4{static_cast<float>(std::get<0>(t)), static_cast<float>(std::get<1>(t)),
+                     static_cast<float>(std::get<2>(t)), static_cast<float>(std::get<3>(t))};
+}
 
 /**
  * @brief Parses a string into a 3D vector (vec3).
